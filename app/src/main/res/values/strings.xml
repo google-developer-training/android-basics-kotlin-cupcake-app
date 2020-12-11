@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+     Copyright (C) 2020 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="app_name">Cupcake</string>
+    <string name="order_cupcakes">Order Cupcakes</string>
+    <string name="one_cupcake">One Cupcake</string>
+    <string name="six_cupcakes">Six Cupcakes</string>
+    <string name="twelve_cupcakes">Twelve Cupcakes</string>
+    <string name="choose_flavor">Choose Flavor</string>
+    <string name="vanilla">Vanilla</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="red_velvet">Red Velvet</string>
+    <string name="salted_caramel">Salted Caramel</string>
+    <string name="coffee">Coffee</string>
+    <string name="special_flavor">Special Flavor</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="send">Send Order to Another App</string>
+    <string name="quantity">Quantity</string>
+    <string name="flavor">Flavor</string>
+    <string name="pickup_date">Pickup date</string>
+    <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
+    <string name="new_cupcake_order">New Cupcake Order</string>
+    <string name="order_details">Quantity: %1$s \n Flavor: %2$s \nPickup date: %3$s \n
+        Total: %4$s \n\n Thank you!</string>
+    <plurals name="cupcakes">
+        <item quantity="one">%d cupcake</item>
+        <item quantity="other">%d cupcakes</item>
+    </plurals>
+</resources>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for selecting a pickup date -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PickupFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.model.OrderViewModel" />
+
+        <variable
+            name="pickupFragment"
+            type="com.example.cupcake.PickupFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
+
+            <RadioGroup
+                android:id="@+id/date_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/option0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[0])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[0])}"
+                    android:text="@{viewModel.dateOptions[0]}"
+                    tools:text="Thursday" />
+
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[1])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[1])}"
+                    android:text="@{viewModel.dateOptions[1]}"
+                    tools:text="Friday" />
+
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[2])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[2])}"
+                    android:text="@{viewModel.dateOptions[2]}"
+                    tools:text="Saturday" />
+
+                <RadioButton
+                    android:id="@+id/option3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="@{viewModel.date.equals(viewModel.dateOptions[3])}"
+                    android:onClick="@{() -> viewModel.setDate(viewModel.dateOptions[3])}"
+                    android:text="@{viewModel.dateOptions[3]}"
+                    tools:text="Sunday" />
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.Cupcake.Divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_options" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.Cupcake.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:text="@{@string/subtotal_price(viewModel.priceString)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/side_margin"
+                android:onClick="@{() -> pickupFragment.cancelOrder()}"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:onClick="@{() -> pickupFragment.goToNextScreen()}"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
