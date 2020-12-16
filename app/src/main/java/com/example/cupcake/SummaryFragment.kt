@@ -70,7 +70,7 @@ class SummaryFragment : Fragment() {
             resources.getQuantityString(R.plurals.cupcakes, numberOfCupcakes, numberOfCupcakes),
             sharedViewModel.flavor.value.toString(),
             sharedViewModel.date.value.toString(),
-            sharedViewModel.priceString.value.toString()
+            sharedViewModel.price.value.toString()
         )
 
         // Create an ACTION_SEND implicit intent with order details in the intent extras
