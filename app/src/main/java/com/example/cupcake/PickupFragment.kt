@@ -65,17 +65,6 @@ class PickupFragment : Fragment() {
     }
 
     /**
-     * Cancel the order and start over.
-     */
-    fun cancelOrder() {
-        // Reset order in view model
-        sharedViewModel.resetOrder()
-
-        // Navigate back to the [StartFragment] to start over
-        findNavController().navigate(R.id.action_pickupFragment_to_startFragment)
-    }
-
-    /**
      * This fragment lifecycle method is called when the view hierarchy associated with the fragment
      * is being removed. As a result, clear out the binding object.
      */
