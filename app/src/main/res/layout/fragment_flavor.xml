@@ -20,6 +20,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".FlavorFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.model.OrderViewModel" />
+
+        <variable
+            name="flavorFragment"
+            type="com.example.cupcake.FlavorFragment" />
+
+
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -41,30 +53,40 @@
                     android:id="@+id/vanilla"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@{viewModel.flavor.equals(@string/vanilla)}"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/vanilla)}"
                     android:text="@string/vanilla" />
 
                 <RadioButton
                     android:id="@+id/chocolate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@{viewModel.flavor.equals(@string/chocolate)}"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/chocolate)}"
                     android:text="@string/chocolate" />
 
                 <RadioButton
                     android:id="@+id/red_velvet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@{viewModel.flavor.equals(@string/red_velvet)}"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/red_velvet)}"
                     android:text="@string/red_velvet" />
 
                 <RadioButton
                     android:id="@+id/salted_caramel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@{viewModel.flavor.equals(@string/salted_caramel)}"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/salted_caramel)}"
                     android:text="@string/salted_caramel" />
 
                 <RadioButton
                     android:id="@+id/coffee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="@{viewModel.flavor.equals(@string/coffee)}"
+                    android:onClick="@{() -> viewModel.setFlavor(@string/coffee)}"
                     android:text="@string/coffee" />
             </RadioGroup>
 
@@ -80,6 +102,7 @@
 
             <TextView
                 android:id="@+id/subtotal"
+                android:text="@{@string/subtotal_price(viewModel.price)}"
                 style="@style/Widget.Cupcake.TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,6 +113,7 @@
 
             <Button
                 android:id="@+id/next_button"
+                android:onClick="@{() -> flavorFragment.goToNextScreen()}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
