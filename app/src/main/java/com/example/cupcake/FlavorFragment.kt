@@ -54,6 +54,7 @@ class FlavorFragment : Fragment() {
             viewModel = sharedViewModel
             lifecycleOwner = viewLifecycleOwner
             nextButton.setOnClickListener { goToNextScreen() }
+            cancelButton.setOnClickListener { cancelOrder() }
         }
     }
 
@@ -62,6 +63,11 @@ class FlavorFragment : Fragment() {
      */
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
+    }
+
+    fun cancelOrder() {
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_flavorFragment_to_startFragment)
     }
 
     /**
