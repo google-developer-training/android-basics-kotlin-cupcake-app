@@ -19,6 +19,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".StartFragment">
+    
+    <data>
+        <variable
+            name="startFragment"
+            type="com.example.cupcake.StartFragment" />
+        
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,30 +57,36 @@
 
             <Button
                 android:id="@+id/order_one_cupcake"
+                android:onClick="@{() -> startFragment.orderCupcake(1)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/one_cupcake" />
+                android:text="@string/one_cupcake"
+                />
 
             <Button
                 android:id="@+id/order_six_cupcakes"
+                android:onClick="@{() -> startFragment.orderCupcake(6)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/six_cupcakes" />
+                android:text="@string/six_cupcakes"
+                />
 
             <Button
                 android:id="@+id/order_twelve_cupcakes"
+                android:onClick="@{() -> startFragment.orderCupcake(12)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"
                 android:minWidth="@dimen/order_cupcake_button_width"
-                android:text="@string/twelve_cupcakes" />
+                android:text="@string/twelve_cupcakes"
+                />
         </LinearLayout>
     </ScrollView>
 </layout>
