@@ -14,6 +14,12 @@ buildscript {
     }
 }
 
+configurations {
+    all {
+        exclude group: 'androidx.lifecycle', module: 'lifecycle-viewmodel-ktx'
+    }
+}
+
 allprojects {
     repositories {
         google()
